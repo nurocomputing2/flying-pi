@@ -1,17 +1,18 @@
 from picamera import PiCamera #get the PiCamera code
 from time import sleep
 import RPi.GPIO as GPIO
-import os
+import os,random,sys
 
 camera = PiCamera() #defines he PiCamera
 
 camera.start_preview() # start the preview to check how the cam records
 sleep(10)
 camera.stop_preview
-print("starting recording in 10 secconds")
+i = input("Name you video any vids with same name will be overwriten")
+print("Starting Recording in 10 secconds")
 sleep(10)
 camera.start_preview()
-camera.start_recording('/home/pi/Desktop/image%s.h264' % i) # where the video is saved
+camera.start_recording('/home/pi/Desktop/%.h264' % i) # where the video is saved
 camrecording = True
 GPIO.setmode(GPIO.BCM) #setting up gpio "stop button" From here 
 GPIO.setwarnings(False)
