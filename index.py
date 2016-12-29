@@ -19,11 +19,11 @@ imput = input("Start recording?")
 if imput = "y"
 camera.start_preview()
 camera.start_recording('/home/pi/video.h264')
-camrec = "true"
-imput = input("Tell me when to stop")
-while camrec = "true"
+camrec = True
+imput = input("Tell me when to stop(type stop)")
+while camrec = True
  if imput = "stop"
-  camrec = "false"
+  camrec = False
 camera.stop_recording()
 camera.stop_preview()
 
